@@ -38,9 +38,9 @@ const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBac
   };
 
   return (
-    <div className="flex flex-col h-full bg-gray-50">
+    <div className="flex flex-col h-full bg-gradient-to-br from-gray-50 to-slate-100 p-4 gap-4">
       {/* 头部 */}
-      <div className="bg-white border-b border-gray-200 px-6 py-4">
+      <div className="bg-white/95 backdrop-blur-sm border border-gray-200/50 px-6 py-4 rounded-xl shadow-md">
         <div className="flex items-center space-x-4">
           <Button
             variant="light"
@@ -57,14 +57,14 @@ const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBac
       </div>
 
       {/* 主要内容 */}
-      <div className="flex-1 overflow-y-auto px-6 py-6">
+      <div className="flex-1 overflow-y-auto px-6 py-6 bg-gradient-to-b from-white/75 to-slate-50/40 backdrop-blur-sm rounded-xl border border-gray-200/40 shadow-inner">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* 商业方向标题 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+            className="bg-gradient-to-br from-white to-gray-50/60 rounded-xl p-6 shadow-md border border-gray-200/50"
           >
             <div className="text-center">
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -79,7 +79,7 @@ const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBac
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+            className="bg-gradient-to-br from-white/98 to-slate-50/40 rounded-xl p-6 shadow-md border border-gray-300/40"
           >
             <h4 className="flex items-center text-lg font-semibold text-gray-800 mb-3">
               <FaBullseye className="text-xl mr-3 text-blue-500" />
@@ -96,7 +96,7 @@ const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBac
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+            className="bg-gradient-to-br from-slate-50 to-gray-100/30 rounded-xl p-6 shadow-md border border-slate-200/50"
           >
             <h4 className="flex items-center text-lg font-semibold text-gray-800 mb-3">
               <FaUser className="text-xl mr-3 text-green-500" />
@@ -123,7 +123,7 @@ const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBac
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+            className="bg-gradient-to-br from-gray-50/80 to-white rounded-xl p-6 shadow-md border border-gray-200/60"
           >
             <h4 className="flex items-center text-lg font-semibold text-gray-800 mb-3">
               <FaStar className="text-xl mr-3 text-yellow-500" />
@@ -141,7 +141,7 @@ const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBac
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+            className="bg-gradient-to-br from-white/95 to-gray-100/50 rounded-xl p-6 shadow-md border border-slate-300/30"
           >
             <h4 className="flex items-center text-lg font-semibold text-gray-800 mb-3">
               <FaRocket className="text-xl mr-3 text-purple-500" />
@@ -167,7 +167,7 @@ const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBac
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+            className="bg-gradient-to-br from-slate-100/60 to-white/90 rounded-xl p-6 shadow-md border border-gray-300/50"
           >
             <h4 className="flex items-center text-lg font-semibold text-gray-800 mb-4">
               <FaTools className="text-xl mr-3 text-orange-500" />

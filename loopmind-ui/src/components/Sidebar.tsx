@@ -20,7 +20,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentScreen, onNavigate }) => {
   ];
 
   return (
-    <div className="w-64 bg-white border-r border-gray-200 flex flex-col h-full">
+    <div className="w-64 bg-white rounded-2xl shadow-lg border border-gray-200/50 flex flex-col h-full overflow-hidden backdrop-blur-sm">
       {/* 头部 */}
       <div className="p-4 border-b border-gray-100">
         <h1 className="text-xl font-bold text-gray-800">循思 AI</h1>

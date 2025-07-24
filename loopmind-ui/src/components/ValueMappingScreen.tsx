@@ -75,40 +75,40 @@ const ValueMappingScreen: React.FC<ValueMappingScreenProps> = ({
   };
 
   return (
-    <div className="h-screen w-full flex flex-col relative overflow-hidden">
-      {/* 问题标题 - 固定在顶部 */}
-      <div className="absolute top-0 left-0 right-0 z-10 bg-gray-900/90 backdrop-blur-sm">
-        <div className="flex items-center justify-between p-4">
-          <Button
-            variant="ghost"
-            startContent={<FaArrowLeft className="w-4 h-4" />}
-            onClick={onBack}
-            className="text-white hover:bg-white/10"
-          >
-            返回
-          </Button>
-          
-          <div className="text-center flex-1">
-            <motion.div
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
+    <div className="h-full w-full flex flex-col relative overflow-hidden rounded-2xl">
+      {/* Dynamic Island 风格悬浮标题 */}
+      <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0, y: -20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="bg-black/90 backdrop-blur-md rounded-full px-6 py-3 shadow-2xl border border-white/10"
+        >
+          <div className="flex items-center space-x-4">
+            <Button
+              variant="ghost"
+              startContent={<FaArrowLeft className="w-3 h-3" />}
+              onClick={onBack}
+              className="text-white hover:bg-white/10 rounded-full min-w-0 px-2 py-1 text-xs"
+              size="sm"
             >
-              <h1 className="text-2xl md:text-3xl font-bold text-white mb-1">
+              返回
+            </Button>
+            
+            <div className="text-center">
+              <h1 className="text-sm font-bold text-white leading-tight">
                 基于你的技能
               </h1>
-              <p className="text-white/80 text-sm md:text-base">
+              <p className="text-white/70 text-xs leading-tight">
                 你最想探索哪个商业方向？
               </p>
-            </motion.div>
+            </div>
           </div>
-          
-          <div className="w-20"></div> {/* 占位符保持居中 */}
-        </div>
+        </motion.div>
       </div>
 
       {/* Kahoot风格的四分屏选项 - 全屏 */}
-      <div className="flex-1 grid grid-cols-2 grid-rows-2">
+      <div className="h-full grid grid-cols-2 grid-rows-2">
         {businessOpportunities.map((opportunity, index) => (
           <motion.div
             key={opportunity.id}
@@ -170,13 +170,19 @@ const ValueMappingScreen: React.FC<ValueMappingScreenProps> = ({
         ))}
       </div>
 
-      {/* 进度指示器 */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
-          <div className="text-white/80 text-sm">
-            选择一个选项继续
+      {/* 进度指示器 - Dynamic Island 风格 */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          className="bg-black/90 backdrop-blur-md rounded-full px-6 py-3 shadow-2xl border border-white/10"
+        >
+          <div className="text-white/90 text-sm font-medium flex items-center space-x-2">
+            <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
+            <span>选择一个选项继续</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

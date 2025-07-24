@@ -129,15 +129,15 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onNext, onSkillsGenerated
   };
 
   return (
-    <div className="flex flex-col h-full bg-gray-50">
+    <div className="flex flex-col h-full bg-gradient-to-br from-gray-50 to-gray-100 p-4 gap-4">
       {/* 头部 */}
-      <div className="bg-white border-b border-gray-200 px-6 py-4">
+      <div className="bg-white/95 backdrop-blur-sm border border-gray-200/50 px-6 py-4 rounded-xl shadow-md">
         <h2 className="text-xl font-semibold text-gray-800">技能发现之旅</h2>
         <p className="text-sm text-gray-500 mt-1">让我们一起探索你的独特价值</p>
       </div>
 
       {/* 聊天区域 */}
-      <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+      <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4 bg-gradient-to-b from-white/70 to-gray-50/50 backdrop-blur-sm rounded-xl border border-gray-200/40 shadow-inner">
         {messages.map((message) => (
           <motion.div
             key={message.id}
@@ -206,7 +206,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onNext, onSkillsGenerated
 
       {/* 输入区域 */}
       {!showSkills && (
-        <div className="bg-white border-t border-gray-200 px-6 py-4">
+        <div className="bg-white/98 backdrop-blur-sm border border-gray-200/60 px-6 py-4 rounded-xl shadow-md">
           <div className="flex space-x-3">
             <Input
               placeholder="请在这里输入你的想法..."
