@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'PingFang SC', 'Source Han Sans', system-ui, sans-serif;
+    background-color: #F2F2F7;
+    color: #333333;
+  }
+}
+
+@layer components {
+  .chat-bubble {
+    @apply rounded-2xl px-4 py-3 max-w-xs shadow-sm;
+  }
+  
+  .ai-bubble {
+    @apply bg-white text-gray-800 mr-auto;
+  }
+  
+  .user-bubble {
+    @apply bg-primary-500 text-white ml-auto;
+  }
+  
+  .skill-card {
+    @apply bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300;
+  }
+  
+  .primary-button {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+  
+  .secondary-button {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-6 rounded-xl border border-gray-200 transition-all duration-200;
+  }
+}
