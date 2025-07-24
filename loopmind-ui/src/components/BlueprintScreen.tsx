@@ -6,6 +6,7 @@ import { FaBullseye, FaUser, FaStar, FaRocket, FaTools, FaArrowLeft } from 'reac
 interface BlueprintScreenProps {
   selectedSkills: string[];
   onBack: () => void;
+  onCompleted?: () => void;
 }
 
 interface ActionItem {
@@ -14,7 +15,7 @@ interface ActionItem {
   completed: boolean;
 }
 
-const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBack }) => {
+const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBack, onCompleted }) => {
   const [actionItems, setActionItems] = useState<ActionItem[]>([
     { id: 1, text: '注册一个专业的小红书账号', completed: false },
     { id: 2, text: '制作并上传3个PPT美化前后的对比图', completed: false },
@@ -31,6 +32,9 @@ const BlueprintScreen: React.FC<BlueprintScreenProps> = ({ selectedSkills, onBac
 
   const handleSavePlan = () => {
     alert('计划已保存到你的个人档案！');
+    if (onCompleted) {
+      onCompleted();
+    }
   };
 
   const handleExportPDF = () => {
